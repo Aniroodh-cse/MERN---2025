@@ -1,12 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import ClassCompEG from './components/components/classComponents/ClassCompEG'
+import About from './components/components/FunctionalComponents/About'
+import Gallery from './components/components/FunctionalComponents/Gallery'
+import Home from './components/components/FunctionalComponents/Home'
 
 function App() {
-  return (<div>
-    <Home />
-  </div>)
+  return (
+    <section>
+    <Home/>
+    <About/>
+    <ClassCompEG/>
+    <Gallery/>
+    </section>
+)
 }
 
 export default App
