@@ -15,6 +15,7 @@ import {BrowserRouter ,Routes ,Route} from 'react-router-dom'
         <Route path="/" element={<Home />}></Route>
         <Route path="/About" element={<About />}></Route>
         <Route path="/ClassCompEG" element={<ClassCompEG />}></Route>
+        <Route path="/Gallery" element={<Gallery/>}></Route>
       </Routes>
       </BrowserRouter>
     <section>
@@ -28,4 +29,4 @@ import {BrowserRouter ,Routes ,Route} from 'react-router-dom'
 )
 }
 
-export default App
+export default App;
