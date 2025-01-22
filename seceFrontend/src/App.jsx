@@ -5,6 +5,7 @@ import Gallery from './components/components/FunctionalComponents/Gallery'
 import Home from './components/components/FunctionalComponents/Home'
 import Navbar from './components/components/FunctionalComponents/Navbar'
 import {BrowserRouter ,Routes ,Route} from 'react-router-dom'
+import Signup from './components/components/FunctionalComponents/signup'
  function App() {
   return (
     <>
@@ -16,6 +17,7 @@ import {BrowserRouter ,Routes ,Route} from 'react-router-dom'
         <Route path="/About" element={<About />}></Route>
         <Route path="/ClassCompEG" element={<ClassCompEG />}></Route>
         <Route path="/Gallery" element={<Gallery/>}></Route>
+        <Route path="/Signup" element={<Signup/>}></Route>
       </Routes>
       </BrowserRouter>
     <section>
