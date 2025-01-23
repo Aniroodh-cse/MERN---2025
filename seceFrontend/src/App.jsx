@@ -10,6 +10,10 @@ import UserState from './components/components/FunctionalComponents/Hooks/useSta
 import UseEffect from './components/components/FunctionalComponents/Hooks/UseEffect'
 import UseEffectAPI from './components/components/FunctionalComponents/Hooks/UseEffectAPI'
 import UseEffectAPIimage from './components/components/FunctionalComponents/Hooks/UseEffectAPIimage'
+import UseRef from './components/components/FunctionalComponents/Hooks/UseRef'
+import UseMemo from './components/components/FunctionalComponents/Hooks/UseMemo'
+import UseCallback from './components/components/FunctionalComponents/Hooks/UseCallback'
+import UseReducer from './components/components/FunctionalComponents/Hooks/UseReducer'
  function App() {
   return (
     <>
@@ -27,6 +31,10 @@ import UseEffectAPIimage from './components/components/FunctionalComponents/Hook
         <Route path="/UseState" element={<UserState/>}></Route>
         <Route path="/UseEffectAPI" element={<UseEffectAPI/>}></Route>
         <Route path="/useimg" element={<UseEffectAPIimage/>}></Route>
+        <Route path="/UseReducer" element={<UseReducer/>}></Route>
+        <Route path="/UseRef" element={<UseRef/>}></Route>
+        <Route path="/UseMemo" element={<UseMemo/>}></Route>
+        <Route path="UseCallback" element={<UseCallback/>}></Route>
         <Route path="/Signup" element={<Signup/>}></Route>
         
         
