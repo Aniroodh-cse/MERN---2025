@@ -16,6 +16,8 @@ import UseMemo from './components/components/FunctionalComponents/Hooks/UseMemo'
 import UseCallback from './components/components/FunctionalComponents/Hooks/UseCallback'
 import UseReducer from './components/components/FunctionalComponents/Hooks/UseReducer'
 import ReactLifecycleMethods from './components/components/classComponents/ReactLifecycleMethods'
+import Student from './components/components/FunctionalComponents/Hooks/Student'
+import Memo from './components/components/FunctionalComponents/Menoization/Memo'
  function App() {
   return (
     <>
@@ -37,7 +39,9 @@ import ReactLifecycleMethods from './components/components/classComponents/React
         <Route path="/UseReducer" element={<UseReducer/>}></Route>
         <Route path="/UseRef" element={<UseRef/>}></Route>
         <Route path="/UseMemo" element={<UseMemo/>}></Route>
-        <Route path="UseCallback" element={<UseCallback/>}></Route>
+        <Route path="UseCallback" element={<UseCallback/>}></Route>   
+        <Route path="/Student" element={<Student/>}></Route>
+        <Route path='/Memo' element={<Memo/>}></Route> 
         <Route path="/Signup" element={<Signup/>}></Route>
         
         

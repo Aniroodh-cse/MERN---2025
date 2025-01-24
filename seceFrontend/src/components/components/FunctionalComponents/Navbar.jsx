@@ -27,8 +27,10 @@ const Navbar = () => {
                     <li><Link to="/UseMemo" class="link">UseMemo</Link></li>
                     <li><Link to="/UseCallback" class="link">UseCallback</Link></li>
                     <li><Link to="/ReactLifecycleMethods" class="link">ReactLifecycleMethods</Link></li>
+                    <li><Link to="/Student" class="link">Student</Link></li>
                 </ol>)}
             </div>
+            <li><Link to="/Memo" class="link">React.memo</Link></li>
             <li><Link class="link" to="/Signup">Signup/login</Link></li>
         </ul>
         </nav>
