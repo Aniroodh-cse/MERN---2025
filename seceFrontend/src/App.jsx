@@ -1,3 +1,4 @@
+import React from 'react'
 import ClassCompEG from './components/components/classComponents/ClassCompEG'
 import About from './components/components/FunctionalComponents/About'
 import Constact from './components/components/FunctionalComponents/Contact'
