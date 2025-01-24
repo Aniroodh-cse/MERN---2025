@@ -5,7 +5,7 @@ import Gallery from './components/components/FunctionalComponents/Gallery'
 import Home from './components/components/FunctionalComponents/Home'
 import Navbar from './components/components/FunctionalComponents/Navbar'
 import {BrowserRouter ,Routes ,Route} from 'react-router-dom'
-import Signup from "./components/components/FunctionalComponents/signup.jsx";
+import Signup from './components/components/FunctionalComponents/Signup'
 import UserState from './components/components/FunctionalComponents/Hooks/useState'
 import UseEffect from './components/components/FunctionalComponents/Hooks/UseEffect'
 import UseEffectAPI from './components/components/FunctionalComponents/Hooks/UseEffectAPI'
