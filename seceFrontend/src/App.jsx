@@ -15,6 +15,7 @@ import UseRef from './components/components/FunctionalComponents/Hooks/UseRef'
 import UseMemo from './components/components/FunctionalComponents/Hooks/UseMemo'
 import UseCallback from './components/components/FunctionalComponents/Hooks/UseCallback'
 import UseReducer from './components/components/FunctionalComponents/Hooks/UseReducer'
+import ReactLifecycleMethods from './components/components/classComponents/ReactLifecycleMethods'
  function App() {
   return (
     <>
@@ -27,6 +28,7 @@ import UseReducer from './components/components/FunctionalComponents/Hooks/UseRe
         <Route path="/Contact" element={<Constact />}></Route>
         <Route path="/ClassCompEG" element={<ClassCompEG />}></Route>
         <Route path="/Gallery" element={<Gallery/>}></Route>
+        <Route path="/ReactLifecycleMethods" element={<ReactLifecycleMethods/>}></Route>
         <Route path="/use-state" element={<Constact />}></Route>
         <Route path='/useEffect' element={<UseEffect />}></Route>
         <Route path="/UseState" element={<UserState/>}></Route>
