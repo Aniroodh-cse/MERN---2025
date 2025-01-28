@@ -4,7 +4,7 @@ const mdb = require("mongoose");
 const dotenv = require("dotenv");
 const app = express();
 dotenv.config();
-const Signup = require("./models/signupSchema");
+const Signup = require("./models/singupSchema");
 
 app.use(express.json());
 
@@ -105,6 +105,9 @@ app.delete("/deleteuser", async (req, res) => {
     res.status(500).send("Error deleting user");
   }
 });
+app.post('/updatedet',(req,res) =>{
+  var updateRec = Signup.findOneAndUpdate({"Username":"abi290"},{$set:{"username":"abi2006"}})
+})
 
 app.listen(3001, () => {
   console.log("Server connected");
