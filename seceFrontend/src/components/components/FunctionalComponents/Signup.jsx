@@ -1,73 +1,53 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
-import axios from 'axios';
+import {useState} from 'react'
+import axios from 'axios'
+import {useNavigate} from 'react-router-dom'
 
 const Signup = () => {
-  const [isLogin, setIsLogin] = useState(true);
-  const [formData, setFormData] = useState({ username: '', password: '' }); 
+    const [firstName,setFirstName] = useState("")
+    const [lastName,setLastName] = useState("")
+    const [userName,setUserName] = useState("")
+    const [email,setEmail] = useState("")
+    const [password,setPassword] = useState("")
+    const navigate = useNavigate();
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (isLogin) {
-      console.log('Login:', formData);
-    } else {
-      console.log('Signup:', formData);
+    const handleSignUp =async (event) =>{
+      event.preventDefault();
+      try{
+        console.log("event triggered");
+        const req = await axios.post("http://localhost:3001/Signup",{
+          firstName:firstName,
+          lastName:lastName,
+          userName:userName,
+          email:email,
+          password:password
+        })
+        //console.log(req)
+        alert(req.data.response);
+        if(req.data.signupStatus){
+          navigate("/login");
+        }
+        else{
+          navigate("/")
+        }
+      }
+        catch(err){
+          console.log(err);
+        }
     }
-    setFormData({ username: '', password: '' });
-  };
-  const handleSignup = () => {
-    console.log("Event Triggered");
-    const req = axios.post("http://localhost:3001/signup",({
-      username:username,
-      password:password
-    }))
-    var navigate=useNavigate;
-    console.log(req);
-    navigate("/login");
-  };
-
   return (
-    <form onClick={handleSignup}>
-    <div style={{ textAlign: 'center', marginTop: '50px' }}>
-      <h2>{isLogin ? 'Login Page' : 'Signup Page'}</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>
-            Username:
-            <input
-              type="text"
-              name="username"
-              value={formData.username}
-              onChange={handleInputChange}
-              required
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Password:
-            <input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleInputChange}
-              required
-            />
-          </label>
-        </div>
-        <button type="submit">{isLogin ? 'Login' : 'Signup'}</button>
-      </form>
-      <button onClick={() => setIsLogin(!isLogin)}>
-        Switch to {isLogin ? 'Signup' : 'Login'}
-      </button>
+    <div>
+        <form method = "POST"  onSubmit={handleSignUp}>
+            FirstName : <input type="text" value={firstName} onChange={(e)=>{setFirstName(e.target.value)}} required/><br/>
+            LastName : <input type="text" value={lastName} onChange={(e)=>{setLastName(e.target.value)}} required/><br/>
+            UserName : <input type="text" value={userName} onChange={(e)=>{setUserName(e.target.value)}} required/><br/>
+            Email : <input type="email" value={email} onChange={(e)=>{setEmail(e.target.value)}} required/><br/>
+            Password : <input type="password" value={password} onChange={(e)=>{setPassword(e.target.value)}} required/><br/>
+            <button type="submit">Signup</button>
+        </form>
+        <p>already have account??<a href="/login">Login</a></p>
+      
     </div>
-    </form>
-  );
-};
+  )
+}
 
-export default Signup;
+export default Signup

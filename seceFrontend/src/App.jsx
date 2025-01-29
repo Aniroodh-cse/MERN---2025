@@ -21,6 +21,7 @@ import Memo from './components/components/FunctionalComponents/Menoization/Memo'
 import LazyLoadingWithSuspense from './components/components/FunctionalComponents/Menoization/LazyLoadingWithSuspense'
 import UseLocalStorage from './components/components/FunctionalComponents/Hooks/CustomHooks/UseLocalStorage'
 import Hoc from './components/components/FunctionalComponents/ContextComponents/HoC/Hoc'
+import Login from './components/components/FunctionalComponents/Login'
  function App() {
   return (
     <>
@@ -48,6 +49,7 @@ import Hoc from './components/components/FunctionalComponents/ContextComponents/
         <Route path='/LazyLoadingWithSuspense' element={<LazyLoadingWithSuspense/>}></Route>
         <Route path='/UseLocalStorage' element={<UseLocalStorage/>}></Route>
         <Route path='/Hoc' element={<Hoc/>}></Route>
+        <Route path='/Login' element={<Login/>}></Route>
         <Route path="/Signup" element={<Signup/>}></Route>
         
         
