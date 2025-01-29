@@ -21,7 +21,21 @@ mdb
     console.log("MongoDB connection unsuccessful", err);
   });
 
-
+const verifyToken = (req,res,next) => {
+  var token = req.headers.authorization
+  if(!token) {
+    res.send("Request Denied")
+  }
+  try {
+    const user = jwt.verify(token,process.env.SECRECT_KEY);
+    console.log(user);
+    req.user = user;
+  }catch(error){
+    console.log(error);
+    res.send("Error in Token");
+  }
+  next();
+}
 app.get("/", (req, res) => {
   res.send(
     "Welcome to Backend friends\nYour RollerCoaster starts from now on\nFasten your codabase so you can catch up with what is being taught"
@@ -33,6 +47,11 @@ app.get("/static", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
+app.get('/json',verifyToken,(req,res) => {
+  console.log("inside jos route");
+  res.json({message:"this is a middleware check",user:req,user:user});
+})
+ 
 
 app.post("/signup", (req, res) => {
   var { firstName, lastName, userName, email, password } = req.body;
@@ -68,6 +87,11 @@ app.post("/login", async (req, res) => {
   const { email, password } = req.body;
   try {
     const user = await Signup.findOne({ email: email });
+    if(existingUser){
+    const payload = {
+      email:existingUser.email,
+      username:existingUser.username
+    }}
     if (!user) {
       return res.status(404).send("User not found");
     }
