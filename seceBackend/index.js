@@ -2,8 +2,11 @@ const express = require("express");
 const path = require("path");
 const mdb = require("mongoose");
 const dotenv = require("dotenv");
+const cors = require('cors');
+
 const app = express();
 dotenv.config();
+app.use(cors());
 const Signup = require("./models/singupSchema");
 
 app.use(express.json());
